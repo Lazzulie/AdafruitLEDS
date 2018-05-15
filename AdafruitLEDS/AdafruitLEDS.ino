@@ -11,7 +11,7 @@
  */
 #include <Adafruit_NeoPixel.h>
 
-#define const int BRIGHTNESS 255
+#define BRIGHTNESS 255
 
 //PWM ports on Arduino to connect to the LED strips
 #define STRIP_ONE 5
@@ -96,7 +96,7 @@ void rainbowStrip(Adafruit_NeoPixel strip) //should theo make all of the pixels 
 {
   for(var i = 0; i < strip.numPixels(); i++)
   {
-    uint32_t c = strip.Color(random(), random(), random());
+    uint32_t c = strip.Color(random(0, 255), random(0, 255), random(0, 255));
     strip.setPixelColor(i, c);
     strip.show();
   }
